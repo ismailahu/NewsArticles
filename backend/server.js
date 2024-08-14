@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(process.env.PORT || 4000, () => {
+    app.listen(process.env.PORT || 5000, () => {
       (
         "Connected to db and Listening for request on port",
-        process.env.PORT || 4000
+        process.env.PORT || 5000
       );
     });
   })
