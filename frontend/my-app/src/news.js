@@ -52,7 +52,8 @@ const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news` || 'http://localhost:4000/api/news');
+        const url = "http://localhost:" + process.env.PORT || 5000 + "/api/news";
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
