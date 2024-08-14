@@ -7,6 +7,7 @@ require("dotenv").config();
 const NewsRouter = require("./Routes/NewsRouter");
 const UserRouter = require("./Routes/UserRouter");
 const cors = require('cors');
+const path = require("path");
 
 const app = express();
 
@@ -29,8 +30,21 @@ mongoose
 
   const corsOptions = {
     credentials: true,
-    origin: ['http://localhost:3000', 'http://localhost:80'] // Whitelist the domains you want to allow
+    origin: true // Allows all domains
 };
+
+const _dirname = path.dirname("");
+
+app.get("/*", function(req,res) {
+  res.sendFile(
+    path.join(__dirname, "../frontend/my-app/public/index.html"),
+    function(err){
+      if(err){
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 
 app.use(cors(corsOptions));
 
