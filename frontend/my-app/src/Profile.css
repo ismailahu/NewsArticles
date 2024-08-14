@@ -1,0 +1,22 @@
+/* src/Profile.css */
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .profile-info {
+    padding: 20px;
+  }
+  
+  .profile-info h2 {
+    margin-bottom: 20px;
+  }
+  
+  .profile-info p {
+    font-size: 18px;
+  }
+  
