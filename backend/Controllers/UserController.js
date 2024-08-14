@@ -57,7 +57,7 @@ const SignIn = async (req, res, next) => {
       return res.status(401).json({ error: "Unauthorized" });
     }
 
-    const jwtSecret = process.env.JWT_SECRET;
+    const jwtSecret = process.env.JWT_SECRET || 'ldasfkadshiuoi';
 
     const token = jwt.sign(
       { UserName: user.UserName, Password: user.Password },

@@ -23,7 +23,7 @@ const Popup = ({ isOpen, onClose, title, detail, username, category }) => {
     //`${process.env.REACT_APP_API_URL}
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news/editNews`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news/editNews` || 'http://localhost:4000/api/news/editNews', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

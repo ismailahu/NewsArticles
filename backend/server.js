@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 4000, () => {
       (
         "Connected to db and Listening for request on port",
-        process.env.PORT
+        process.env.PORT || 4000
       );
     });
   })
@@ -35,6 +35,15 @@ mongoose
 
 const _dirname = path.dirname("");
 
+
+
+app.use(cors(corsOptions));
+
+app.use('/api/news/', NewsRouter);
+app.use('/api/auth/', UserRouter);
+
+app.use(ErrorHandler);
+
 app.get("/*", function(req,res) {
   res.sendFile(
     path.join(__dirname, "../frontend/my-app/public/index.html"),
@@ -45,10 +54,3 @@ app.get("/*", function(req,res) {
     }
   );
 });
-
-app.use(cors(corsOptions));
-
-app.use('/api/news/', NewsRouter);
-app.use('/api/auth/', UserRouter);
-
-app.use(ErrorHandler);
