@@ -36,7 +36,11 @@ mongoose
 
 const _dirname = path.dirname("");
 
-app.use('/NewsArticles', express.static(path.join(__dirname, '../frontend/my-app/build')));
+
+
+if(process.env.NODE_ENV == 'production'){
+  app.use(express.static('../frontend/my-app/build'));
+}
 
 
 app.use(cors(corsOptions));

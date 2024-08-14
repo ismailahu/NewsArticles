@@ -23,7 +23,7 @@ const AddNews = () => {
     
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news/addNews`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news/addNews` || 'http://localhost:4000/api/news/addNews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
