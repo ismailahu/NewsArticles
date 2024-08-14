@@ -1,4 +1,4 @@
-NewsArticlesRepo
+
 Node Js, React, Jest and Mongodb is used in this project.
 
 Link to Heroku app: https://newsarticle-bdbcd6637463.herokuapp.com/ 
