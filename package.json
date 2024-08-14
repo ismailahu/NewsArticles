@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ismailahu/News-articles.git"
   },
+  "engines" :{"node": "20.x"},
   "author": "",
   "license": "ISC",
   "bugs": {
