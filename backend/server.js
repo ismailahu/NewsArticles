@@ -15,16 +15,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect('mongodb+srv://ismail:Jackgrealish123@newsarticles.zz4vw.mongodb.net/?retryWrites=true&w=majority&appName=NewsArticles')
   .then(() => {
     app.listen(process.env.PORT || 5000, () => {
-      (
+      console.log(
         "Connected to db and Listening for request on port",
         process.env.PORT || 5000
       );
     });
   })
   .catch((error) => {
+    console.log(error);
     (error);
   });
 
