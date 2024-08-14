@@ -36,7 +36,7 @@ mongoose
 
 const _dirname = path.dirname("");
 
-app.use(express.static('../frontend/my-app/public'))
+app.use(express.static('public'))
 
 
 app.use(cors(corsOptions));
