@@ -23,7 +23,10 @@ const AddNews = () => {
     
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/news/addNews` || 'http://localhost:4000/api/news/addNews', {
+
+      const url = "https://newsarticle-bdbcd6637463.herokuapp.com/api/news/addNews";
+
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

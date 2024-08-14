@@ -21,7 +21,7 @@ const SignInPage = () => {
     setError('');
     
     try {
-      const url = "http://localhost:" + process.env.PORT || 5000 + "/api/auth/signin";
+      const url = "https://newsarticle-bdbcd6637463.herokuapp.com/api/auth/signin";
       const response = await fetch(url, {
         method: 'POST',
         headers: {

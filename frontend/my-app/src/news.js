@@ -52,7 +52,7 @@ const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const url = "http://localhost:" + process.env.PORT || 5000 + "/api/news";
+        const url = "https://newsarticle-bdbcd6637463.herokuapp.com/api/news";
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Network response was not ok');

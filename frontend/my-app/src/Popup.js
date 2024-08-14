@@ -23,7 +23,7 @@ const Popup = ({ isOpen, onClose, title, detail, username, category }) => {
     //`${process.env.REACT_APP_API_URL}
 
     try {
-      const url = "http://localhost:" + process.env.PORT || 5000 + "/api/news/editNews";
+      const url = "https://newsarticle-bdbcd6637463.herokuapp.com/api/news/editNews";
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
